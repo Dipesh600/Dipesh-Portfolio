@@ -1,51 +1,11 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { ArrowRight } from "lucide-react";
 import { SiGithub } from "react-icons/si";
-
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  liveLink: string;
-  githubLink: string;
-}
+import { projects } from "@/data/projects";
+import { Link } from "wouter";
 
 const Projects = () => {
   const { ref, isVisible } = useScrollAnimation();
-
-  const projects: Project[] = [
-    {
-      title: "E-commerce Platform",
-      description:
-        "A full-stack e-commerce platform with user authentication, product catalog, shopping cart, and payment integration.",
-      image:
-        "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      technologies: ["React.js", "Node.js"],
-      liveLink: "#",
-      githubLink: "https://github.com",
-    },
-    {
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates, task assignments, and progress tracking.",
-      image:
-        "https://images.unsplash.com/photo-1607706189992-eae578626c86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      technologies: ["React.js", "Firebase"],
-      liveLink: "#",
-      githubLink: "https://github.com",
-    },
-    {
-      title: "Blog Platform",
-      description:
-        "A responsive blog platform with content management system, user authentication, and comment functionality.",
-      image:
-        "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      technologies: ["Next.js", "MongoDB"],
-      liveLink: "#",
-      githubLink: "https://github.com",
-    },
-  ];
 
   return (
     <section
@@ -65,9 +25,9 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div
-              key={index}
+              key={project.id}
               className="project-card bg-primary-50 dark:bg-gray-900 overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all"
             >
               <div className="relative h-48 overflow-hidden">
@@ -78,7 +38,7 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-4">
-                  {project.technologies.map((tech, techIndex) => (
+                  {project.technologies.slice(0, 2).map((tech, techIndex) => (
                     <span
                       key={techIndex}
                       className={`${
@@ -92,29 +52,25 @@ const Projects = () => {
                       {tech}
                     </span>
                   ))}
+                  {project.technologies.length > 2 && (
+                    <span className="bg-gray-700 text-white text-xs px-2 py-1 rounded-full ml-2">
+                      +{project.technologies.length - 2}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                 <p className="text-primary-600 dark:text-primary-400 mb-4 text-sm">
-                  {project.description}
+                  {project.shortDescription}
                 </p>
                 <div className="flex justify-between items-center">
-                  <a
-                    href={project.liveLink}
+                  <Link 
+                    href={`/project/${project.id}`}
                     className="text-blue-500 hover:text-blue-600 font-medium text-sm flex items-center gap-1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => {
-                      // If link is just a "#", prevent default but still show indicator
-                      if (project.liveLink === "#") {
-                        e.preventDefault();
-                        alert("Project demo is coming soon!");
-                      }
-                    }}
                   >
-                    View Project <ArrowRight className="h-4 w-4" />
-                  </a>
+                    View Details <ArrowRight className="h-4 w-4" />
+                  </Link>
                   <a
                     href={project.githubLink}
                     className="text-primary-600 dark:text-primary-400 hover:text-blue-500 text-xl"
@@ -140,10 +96,8 @@ const Projects = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => {
-              // This ensures the link doesn't reload the portfolio
-              // Open in a new tab or show a message if the URL is not valid
               e.preventDefault();
-              window.open("https://github.com", "_blank");
+              window.open("https://github.com/happyswaraj", "_blank");
             }}
           >
             View More Projects on GitHub <SiGithub className="h-5 w-5" />
