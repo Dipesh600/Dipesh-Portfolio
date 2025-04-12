@@ -29,13 +29,17 @@ const Header = () => {
   };
 
   const scrollToSection = (sectionId: string) => {
+    console.log(`Attempting to scroll to section: ${sectionId}`);
     const element = document.getElementById(sectionId);
     if (element) {
+      console.log(`Found element with id ${sectionId}, scrolling to:`, element.offsetTop - 80);
       window.scrollTo({
         top: element.offsetTop - 80,
         behavior: "smooth",
       });
       closeMobileMenu();
+    } else {
+      console.error(`Element with id ${sectionId} not found`);
     }
   };
 
