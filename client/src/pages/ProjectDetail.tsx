@@ -5,6 +5,7 @@ import { Link } from 'wouter';
 import { getProjectById } from '../data/projects';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import CodeBlock from '@/components/CodeBlock';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
@@ -97,6 +98,124 @@ const ProjectDetail: React.FC = () => {
                   </li>
                 ))}
               </ul>
+              
+              {project.id === 'ecommerce-platform' && (
+                <>
+                  <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Implementation Highlights</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">Here's a glimpse of the authentication implementation:</p>
+                  <CodeBlock 
+                    title="auth.js" 
+                    language="javascript"
+                    code={`const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const User = require('../models/User');
+
+// User authentication middleware
+const authenticateUser = async (req, res, next) => {
+  try {
+    const token = req.header('Authorization').replace('Bearer ', '');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findOne({ _id: decoded._id, 'tokens.token': token });
+    
+    if (!user) {
+      throw new Error();
+    }
+    
+    req.token = token;
+    req.user = user;
+    next();
+  } catch (error) {
+    res.status(401).send({ error: 'Please authenticate.' });
+  }
+};
+
+module.exports = { authenticateUser };`}
+                  />
+                </>
+              )}
+              
+              {project.id === 'task-management' && (
+                <>
+                  <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Implementation Highlights</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">Here's how real-time updates are implemented:</p>
+                  <CodeBlock 
+                    title="firebaseConfig.js" 
+                    language="javascript"
+                    code={`import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
+};
+
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth(app);`}
+                  />
+                </>
+              )}
+              
+              {project.id === 'web-data-harvester' && (
+                <>
+                  <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Implementation Highlights</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">Here's a snippet of the web scraping functionality:</p>
+                  <CodeBlock 
+                    title="scraper.py" 
+                    language="python"
+                    code={`import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+class WebScraper:
+    def __init__(self, url, selectors):
+        self.url = url
+        self.selectors = selectors
+        self.results = []
+        
+    def fetch_page(self):
+        """Fetch the HTML content of the page."""
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+        response = requests.get(self.url, headers=headers)
+        if response.status_code == 200:
+            return response.text
+        else:
+            raise Exception(f"Failed to fetch page: {response.status_code}")
+    
+    def parse_data(self, html):
+        """Extract data using the provided CSS selectors."""
+        soup = BeautifulSoup(html, 'html.parser')
+        items = soup.select(self.selectors['container'])
+        
+        for item in items:
+            data = {}
+            for key, selector in self.selectors['fields'].items():
+                element = item.select_one(selector)
+                if element:
+                    data[key] = element.text.strip()
+                else:
+                    data[key] = None
+            self.results.append(data)
+            
+    def to_dataframe(self):
+        """Convert the extracted data to a pandas DataFrame."""
+        return pd.DataFrame(self.results)
+    
+    def export_csv(self, filename):
+        """Export the data to a CSV file."""
+        df = self.to_dataframe()
+        df.to_csv(filename, index=False)
+        return f"Data exported to {filename}"`}
+                  />
+                </>
+              )}
             </div>
           </div>
           

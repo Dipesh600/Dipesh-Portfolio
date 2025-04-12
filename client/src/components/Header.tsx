@@ -55,6 +55,7 @@ const Header = () => {
     { name: "Skills", section: "skills" },
     { name: "Projects", section: "projects" },
     { name: "Experience", section: "experience" },
+    { name: "Certificates", section: "certificates" },
     { name: "Contact", section: "contact" },
   ];
 
