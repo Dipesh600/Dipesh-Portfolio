@@ -130,14 +130,14 @@ const About = () => {
           >
             <div className="relative group">
               {/* Decorative elements */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-md opacity-30 group-hover:opacity-70 transition-all duration-500"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-2xl transform rotate-6 group-hover:rotate-3 transition-all duration-500"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-md opacity-30 group-hover:opacity-70 transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full transform rotate-6 group-hover:rotate-3 transition-all duration-500"></div>
               
               {/* Main image */}
               <img
                 src={happyImage}
                 alt="Professional portrait of Happy Swaraj"
-                className="rounded-2xl w-full max-w-md relative shadow-lg z-10 transform group-hover:scale-[1.02] transition-all duration-500"
+                className="rounded-full w-64 h-64 object-cover relative shadow-lg z-10 transform group-hover:scale-[1.02] transition-all duration-500 border-4 border-white dark:border-gray-700"
               />
               
               {/* Code decorations */}
