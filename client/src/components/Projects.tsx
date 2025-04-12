@@ -1,11 +1,13 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Globe } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { projects } from "@/data/projects";
 import { Link } from "wouter";
+import { useToast } from "@/hooks/use-toast";
 
 const Projects = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { toast } = useToast();
 
   return (
     <section
@@ -71,18 +73,32 @@ const Projects = () => {
                   >
                     View Details <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <a
-                    href={project.githubLink}
-                    className="text-primary-600 dark:text-primary-400 hover:text-blue-500 text-xl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.open(project.githubLink, "_blank");
-                    }}
-                  >
-                    <SiGithub className="h-5 w-5" />
-                  </a>
+                  <div className="flex gap-2">
+                    <button
+                      className="text-primary-600 dark:text-primary-400 hover:text-blue-500 text-xs p-1"
+                      onClick={() => {
+                        toast({
+                          title: "Live Demo",
+                          description: "Live demo will be available soon!",
+                          duration: 3000,
+                        });
+                      }}
+                    >
+                      <Globe className="h-4 w-4" />
+                    </button>
+                    <a
+                      href={project.githubLink}
+                      className="text-primary-600 dark:text-primary-400 hover:text-blue-500 text-xl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.open(project.githubLink, "_blank");
+                      }}
+                    >
+                      <SiGithub className="h-5 w-5" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

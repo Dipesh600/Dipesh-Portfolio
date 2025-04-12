@@ -8,8 +8,10 @@ import { Badge } from '@/components/ui/badge';
 import CodeBlock from '@/components/CodeBlock';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import { useToast } from '@/hooks/use-toast';
 
 const ProjectDetail: React.FC = () => {
+  const { toast } = useToast();
   const [, params] = useRoute('/project/:id');
   const projectId = params?.id;
   const project = projectId ? getProjectById(projectId) : undefined;
@@ -53,15 +55,19 @@ const ProjectDetail: React.FC = () => {
               {project.date}
             </div>
             <div className="flex gap-2">
-              <a 
-                href={project.liveLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <button 
+                onClick={() => {
+                  toast({
+                    title: "Live Demo",
+                    description: "Live demo will be available soon!",
+                    duration: 3000,
+                  });
+                }}
                 className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
               >
                 <Globe className="h-4 w-4" />
                 Live Demo
-              </a>
+              </button>
               <a 
                 href={project.githubLink} 
                 target="_blank" 
@@ -234,10 +240,14 @@ class WebScraper:
             <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Project Links</h3>
               <div className="space-y-4">
-                <a 
-                  href={project.liveLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                <button 
+                  onClick={() => {
+                    toast({
+                      title: "Live Demo",
+                      description: "Live demo will be available soon!",
+                      duration: 3000,
+                    });
+                  }}
                   className="flex items-center justify-between w-full p-3 bg-white dark:bg-gray-700 rounded-md border border-gray-200 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 transition-colors"
                 >
                   <div className="flex items-center">
@@ -245,7 +255,7 @@ class WebScraper:
                     <span className="font-medium">Live Demo</span>
                   </div>
                   <ArrowLeft className="h-4 w-4 rotate-180" />
-                </a>
+                </button>
                 
                 <a 
                   href={project.githubLink} 
