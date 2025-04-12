@@ -105,6 +105,13 @@ const Projects = () => {
                     className="text-blue-500 hover:text-blue-600 font-medium text-sm flex items-center gap-1"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => {
+                      // If link is just a "#", prevent default but still show indicator
+                      if (project.liveLink === "#") {
+                        e.preventDefault();
+                        alert("Project demo is coming soon!");
+                      }
+                    }}
                   >
                     View Project <ArrowRight className="h-4 w-4" />
                   </a>
@@ -113,6 +120,10 @@ const Projects = () => {
                     className="text-primary-600 dark:text-primary-400 hover:text-blue-500 text-xl"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(project.githubLink, "_blank");
+                    }}
                   >
                     <SiGithub className="h-5 w-5" />
                   </a>
@@ -124,10 +135,16 @@ const Projects = () => {
 
         <div className="text-center mt-12">
           <a
-            href="https://github.com"
+            href="https://github.com/happyswaraj"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-900 text-primary-800 dark:text-primary-100 rounded-lg font-medium border border-primary-200 dark:border-primary-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => {
+              // This ensures the link doesn't reload the portfolio
+              // Open in a new tab or show a message if the URL is not valid
+              e.preventDefault();
+              window.open("https://github.com", "_blank");
+            }}
           >
             View More Projects on GitHub <SiGithub className="h-5 w-5" />
           </a>
