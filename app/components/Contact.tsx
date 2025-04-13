@@ -1,13 +1,11 @@
 'use client';
 
-import { useState } from "react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
+import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -22,55 +20,55 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Link2, Twitter } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
-  subject: z.string().min(5, { message: "Subject must be at least 5 characters" }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
+const contactFormSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
-type ContactFormValues = z.infer<typeof formSchema>;
+type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 const Contact = () => {
   const { ref, isVisible } = useScrollAnimation();
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
+    resolver: zodResolver(contactFormSchema),
   });
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: async (data: ContactFormValues) => {
-      return apiRequest("POST", "/api/contact", data);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+      
+      return response.json();
     },
     onSuccess: () => {
       toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-        variant: "default",
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
       });
       form.reset();
-      setIsSubmitting(false);
     },
-    onError: (error) => {
+    onError: () => {
       toast({
-        title: "Error sending message",
-        description: error.message || "Please try again later.",
+        title: "Error",
+        description: "Failed to send message. Please try again.",
         variant: "destructive",
       });
-      setIsSubmitting(false);
     },
   });
 
   const onSubmit = (data: ContactFormValues) => {
-    setIsSubmitting(true);
     mutate(data);
   };
 
@@ -84,11 +82,10 @@ const Contact = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Get in Touch</h2>
           <div className="w-20 h-1 bg-blue-500 mx-auto mt-4 mb-8 rounded-full"></div>
           <p className="text-primary-600 dark:text-primary-400 max-w-2xl mx-auto">
-            Have a project in mind or want to discuss opportunities? Feel free to
-            reach out!
+            Have a question or want to work together? Feel free to reach out!
           </p>
         </div>
 
@@ -187,11 +184,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input
-                          placeholder="Your name"
-                          {...field}
-                          className="w-full px-4 py-3 rounded-lg border bg-white dark:bg-gray-900"
-                        />
+                        <Input placeholder="Your name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -205,30 +198,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input
-                          type="email"
-                          placeholder="Your email address"
-                          {...field}
-                          className="w-full px-4 py-3 rounded-lg border bg-white dark:bg-gray-900"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Subject</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Subject of your message"
-                          {...field}
-                          className="w-full px-4 py-3 rounded-lg border bg-white dark:bg-gray-900"
-                        />
+                        <Input type="email" placeholder="Your email" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -244,9 +214,8 @@ const Contact = () => {
                       <FormControl>
                         <Textarea
                           placeholder="Your message"
-                          rows={5}
+                          className="min-h-[150px]"
                           {...field}
-                          className="w-full px-4 py-3 rounded-lg border bg-white dark:bg-gray-900 resize-none"
                         />
                       </FormControl>
                       <FormMessage />
@@ -257,9 +226,9 @@ const Contact = () => {
                 <Button
                   type="submit"
                   className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium shadow-lg hover:shadow-xl"
-                  disabled={isSubmitting}
+                  disabled={isPending}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isPending ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </Form>
