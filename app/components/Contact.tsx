@@ -117,7 +117,7 @@ const Contact = () => {
                     Email
                   </h4>
                   <p className="text-primary-600 dark:text-primary-400">
-                    happyswaraj@example.com
+                  happyswaraj7667@gmail.com
                   </p>
                 </div>
               </div>
@@ -131,7 +131,7 @@ const Contact = () => {
                     Location
                   </h4>
                   <p className="text-primary-600 dark:text-primary-400">
-                    Hyderabad, India
+                    Patna, Bihar, India
                   </p>
                 </div>
               </div>
@@ -146,7 +146,7 @@ const Contact = () => {
                   </h4>
                   <div className="flex space-x-4 mt-2">
                     <a
-                      href="https://github.com"
+                      href="https://github.com/happy0002"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary-600 dark:text-primary-400 hover:text-blue-500 transition-colors"
@@ -155,7 +155,7 @@ const Contact = () => {
                       <SiGithub className="h-5 w-5" />
                     </a>
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/happyswaraj/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary-600 dark:text-primary-400 hover:text-blue-500 transition-colors"
@@ -163,15 +163,7 @@ const Contact = () => {
                     >
                       <SiLinkedin className="h-5 w-5" />
                     </a>
-                    <a
-                      href="https://twitter.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-600 dark:text-primary-400 hover:text-blue-500 transition-colors"
-                      aria-label="Twitter"
-                    >
-                      <Twitter className="h-5 w-5" />
-                    </a>
+                    
                   </div>
                 </div>
               </div>
