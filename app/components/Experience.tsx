@@ -1,7 +1,7 @@
 'use client';
 
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { Code, Award, Users } from "lucide-react";
+import { Code, Award, Users, Trophy } from "lucide-react";
 
 interface ExperienceItem {
   title: string;
@@ -35,12 +35,21 @@ const Experience = () => {
       icon: <Users className="h-6 w-6" />,
     },
     {
-      title: "Hackathon Winner",
-      organization: "Smart India Hackathon",
-      period: "2024",
+      title: "CodeChef Ranking",
+      organization: "CodeChef",
+      period: "Nov 2022",
       description:
-        "Led a team of 6 developers to victory in the Smart India Hackathon, developing an innovative solution for digital governance. Created a mobile application for streamlined police department operations, implementing secure authentication and real-time data management features.",
-      skills: ["Team Leadership", "React Native", "FastAPI", "Problem Solving"],
+        "Achieved a national ranking of #121 in Nepal on CodeChef, demonstrating strong problem-solving skills and algorithmic thinking. Consistently participated in monthly contests and improved my rating through dedicated practice and learning.",
+      skills: ["Algorithms", "Data Structures", "Problem Solving", "Competitive Programming"],
+      icon: <Trophy className="h-6 w-6" />,
+    },
+    {
+      title: "Hackathon Participant",
+      organization: "Various Tech Competitions",
+      period: "2022 - Present",
+      description:
+        "Regular participant in coding contests and hackathons, working on innovative solutions under time constraints. Developed team collaboration skills and the ability to rapidly prototype solutions to real-world problems. Actively engaged in the competitive programming community to continuously improve technical skills.",
+      skills: ["Team Collaboration", "Rapid Prototyping", "Problem Solving", "Time Management"],
       icon: <Award className="h-6 w-6" />,
     },
   ];
@@ -71,6 +80,8 @@ const Experience = () => {
               iconBgColor = "bg-blue-500";
             } else if (index === 1) {
               iconBgColor = "bg-emerald-500";
+            } else if (index === 2) {
+              iconBgColor = "bg-amber-500";
             } else {
               iconBgColor = "bg-purple-500";
             }

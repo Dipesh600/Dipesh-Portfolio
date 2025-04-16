@@ -5,20 +5,20 @@ const Resume = () => {
     <div id="resume" className="max-w-[21cm] mx-auto bg-white p-8 print:p-6 shadow-lg">
       {/* Header */}
       <header className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 text-gray-900">Happy Swaraj</h1>
+        <h1 className="text-3xl font-bold mb-2 text-gray-900">Dipesh Chaudhary</h1>
         <p className="text-gray-600 mb-3">Saran, Bihar 841424</p>
         <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
-          <a href="tel:9128730395" className="hover:text-blue-600 transition-colors">📱 9128730395</a>
-          <a href="mailto:happyswaraj7667@gmail.com" className="hover:text-blue-600 transition-colors">✉️ happyswaraj7667@gmail.com</a>
-          <a href="https://linkedin.com/in/happyswaraj/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">🔗 linkedin.com/in/happyswaraj/</a>
-          <a href="https://github.com/happy0002" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">💻 github.com/happy0002</a>
+          <a href="tel:7631467086" className="hover:text-blue-600 transition-colors">📱 7631467086</a>
+          <a href="mailto:dipeshch040313@gmail.com" className="hover:text-blue-600 transition-colors">✉️ dipeshch040313@gmail.com</a>
+          <a href="https://linkedin.com/in/dipesh--chaudhary/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">🔗 linkedin.com/in/dipesh--chaudhary/</a>
+          <a href="https://github.com/Dipesh600" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">💻 github.com/Dipesh600</a>
         </div>
       </header>
 
       {/* Summary */}
       <section className="mb-6">
         <p className="text-gray-700 leading-relaxed">
-          Computer Science & Engineering student with hands-on experience in full-stack development, mobile app development, and secure authentication systems. Skilled in React Native, Python, and database management.
+          Computer Science & Engineering student with hands-on experience in full-stack development, mobile app development, and secure authentication systems. Skilled in PHP, MySQL, MongoDB, React.js, and database management.
         </p>
       </section>
 
@@ -28,25 +28,37 @@ const Resume = () => {
         
         <div className="mb-4">
           <div className="flex justify-between items-start mb-1">
-            <h3 className="font-bold text-gray-800">Police Connect | React Native, Expo, TypeScript, PLSQL</h3>
-            <span className="text-sm text-gray-600">Feb 2025</span>
+            <h3 className="font-bold text-gray-800">School Management System | PHP, MySQL, HTML, CSS, JavaScript</h3>
+            <span className="text-sm text-gray-600">Nov 2024</span>
           </div>
           <ul className="list-disc ml-5 text-sm text-gray-700 space-y-1">
-            <li>Built a cross-platform mobile application ensuring smooth user experience across iOS and Android</li>
-            <li>Integrated secure login system with UID authentication and PL SQL data storage</li>
-            <li>Developed features for complaint management and investigation tracking</li>
+            <li>Built a comprehensive web-based system for efficient school administration</li>
+            <li>Implemented secure data management with PHP and MySQL database</li>
+            <li>Created an intuitive interface for administrative tasks with responsive design</li>
           </ul>
         </div>
 
         <div className="mb-4">
           <div className="flex justify-between items-start mb-1">
-            <h3 className="font-bold text-gray-800">FastAPI Authentication System | FastAPI, React Native, SQLite</h3>
-            <span className="text-sm text-gray-600">Dec 2024</span>
+            <h3 className="font-bold text-gray-800">Wandi-Now | MERN Stack, RESTful API</h3>
+            <span className="text-sm text-gray-600">April 2024</span>
           </div>
           <ul className="list-disc ml-5 text-sm text-gray-700 space-y-1">
-            <li>Developed secure authentication routes using FastAPI and SQLAlchemy ORM</li>
-            <li>Implemented password hashing with Passlib and bcrypt for secure data storage</li>
-            <li>Built React Native frontend with Axios and AsyncStorage for token management</li>
+            <li>Developed a feature-rich tourism website for booking hotels, flights, and guide services</li>
+            <li>Integrated MongoDB for secure user data management and authentication</li>
+            <li>Implemented RESTful APIs for real-time data retrieval and secure transactions</li>
+          </ul>
+        </div>
+
+        <div className="mb-4">
+          <div className="flex justify-between items-start mb-1">
+            <h3 className="font-bold text-gray-800">App Limiter | Kotlin, Android Studio, SQLite</h3>
+            <span className="text-sm text-gray-600">January 2024</span>
+          </div>
+          <ul className="list-disc ml-5 text-sm text-gray-700 space-y-1">
+            <li>Built an Android application for effective screen time management</li>
+            <li>Designed simple and intuitive interface for monitoring and controlling app usage</li>
+            <li>Implemented notifications for usage limits to encourage better app habits</li>
           </ul>
         </div>
       </section>
@@ -57,15 +69,15 @@ const Resume = () => {
         <div className="grid grid-cols-1 gap-2 text-sm">
           <div className="flex gap-2">
             <span className="font-semibold min-w-[100px]">Languages:</span>
-            <span className="text-gray-700">C++, Java, JavaScript, Python</span>
+            <span className="text-gray-700">C++, Java, JavaScript, PHP, Python</span>
           </div>
           <div className="flex gap-2">
             <span className="font-semibold min-w-[100px]">Technologies:</span>
-            <span className="text-gray-700">React JS, Node.js, React Native, FastAPI, SQLite, PLSQL</span>
+            <span className="text-gray-700">React.js, Node.js, Express.js, MySQL, MongoDB, SQLite, Kotlin</span>
           </div>
           <div className="flex gap-2">
             <span className="font-semibold min-w-[100px]">Tools:</span>
-            <span className="text-gray-700">Git, GitHub, VS Code, IntelliJ, Postman, Selenium</span>
+            <span className="text-gray-700">Git, GitHub, VS Code, Android Studio, Postman</span>
           </div>
           <div className="flex gap-2">
             <span className="font-semibold min-w-[100px]">Skills:</span>
@@ -105,6 +117,21 @@ const Resume = () => {
               <p className="text-sm text-gray-700">G.D Mission Public School, Bihar | Percentage: 60%</p>
             </div>
             <span className="text-sm text-gray-600">2017 – 2018</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements Section */}
+      <section className="mb-6">
+        <h2 className="text-lg font-bold border-b-2 border-gray-300 mb-3 pb-1 text-gray-900">Achievements</h2>
+        <div className="grid grid-cols-1 gap-3">
+          <div className="flex items-start">
+            <span className="text-blue-500 mr-2">🏆</span>
+            <span className="text-gray-700">Ranked #121 in Nepal on CodeChef (Nov 2022)</span>
+          </div>
+          <div className="flex items-start">
+            <span className="text-blue-500 mr-2">🏆</span>
+            <span className="text-gray-700">Regular participant in coding contests and hackathons</span>
           </div>
         </div>
       </section>

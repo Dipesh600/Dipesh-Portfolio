@@ -13,10 +13,10 @@ const Header = () => {
   const { theme } = useTheme();
 
   const contactInfo = {
-    email: 'happyswaraj7667@gmail.com',
-    phone: '9128730395',
-    linkedin: 'linkedin.com/in/happyswaraj/',
-    github: 'https://github.com/happy0002'
+    email: 'dipeshch040313@gmail.com',
+    phone: '8521129540',
+    linkedin: 'linkedin.com/in/dipesh--chaudhary/',
+    github: 'https://github.com/Dipesh600'
   };
 
   useEffect(() => {
@@ -81,7 +81,7 @@ const Header = () => {
             scrollToSection("home");
           }}
         >
-          <span className="bg-gradient-text">Happy Swaraj</span>
+          <span className="bg-gradient-text">Dipesh Chaudhary</span>
         </Link>
 
         {/* Desktop Navigation */}

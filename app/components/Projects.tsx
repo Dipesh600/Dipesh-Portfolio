@@ -38,8 +38,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
-                  style={{ objectPosition: 'center top' }}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-4">
@@ -110,13 +109,13 @@ const Projects = () => {
 
         <div className="text-center mt-12">
           <a
-            href="https://github.com/happyswaraj"
+            href="https://github.com/Dipesh600"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-900 text-primary-800 dark:text-primary-100 rounded-lg font-medium border border-primary-200 dark:border-primary-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => {
               e.preventDefault();
-              window.open("https://github.com/happyswaraj", "_blank");
+              window.open("https://github.com/Dipesh600", "_blank");
             }}
           >
             View More Projects on GitHub <SiGithub className="h-5 w-5" />

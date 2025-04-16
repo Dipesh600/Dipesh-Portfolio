@@ -3,24 +3,35 @@ import { Project } from '@/types/project';
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Police Connect",
-    description: "A cross-platform mobile application using React Native and Expo, ensuring a smooth, responsive user experience across both iOS and Android. Integrated a secure login system using unique UID and password, with PL SQL for secure data storage. Developed features that allow officers to quickly access and manage complaints, investigations, and ongoing cases.",
-    shortDescription: "Cross-platform mobile app for police department management",
-    image: "/assets/projects/punjabPoliceplatform.png",
-    technologies: ["React Native", "Expo", "TypeScript", "PLSQL"],
-    githubLink: "https://github.com/happy0002/Police-connect",
+    title: "School Management System",
+    description: "A comprehensive web-based system that streamlines administration with features for managing students, teachers, and operations efficiently. Built with PHP and MySQL database to ensure secure and effective data management. The system provides an intuitive interface for administrative tasks and features responsive design for access across different devices.",
+    shortDescription: "Web-based school administration system",
+    image: "/assets/projects/Admin_Dashboard.png",
+    technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    githubLink: "https://github.com/Dipesh600/School-Management-System",
     demoLink: "",
-    date: "Feb 2025"
+    date: "Nov 2024"
   },
   {
     id: 2,
-    title: "FastAPI",
-    description: "Developed secure authentication routes for user signup and login using FastAPI, Python's high-performance web framework. Integrated SQLite as the database for storing user credentials, using SQLAlchemy ORM for database interactions. Implemented password hashing using Passlib and bcrypt, ensuring secure storage and protection of user passwords. Built the mobile frontend using React Native, with Axios for API calls and AsyncStorage to store authentication tokens securely.",
-    shortDescription: "High-performance authentication system with FastAPI",
-    image: "/assets/projects/fastapiimage.png",
-    technologies: ["FastAPI", "React Native", "SQLite", "Python"],
-    githubLink: "https://github.com/happy0002/fastapi-backend-for_polish",
+    title: "Wandi-Now",
+    description: "Developed a feature-rich tourism website that enables users to seamlessly book hotels, flights, and guide services. Integrated MongoDB for secure and efficient user data management and authentication. The platform features RESTful APIs for real-time data retrieval and secure transactions, with a responsive and user-friendly interface for smooth navigation across all devices.",
+    shortDescription: "Tourism booking platform with comprehensive features",
+    image: "/assets/projects/Wandr-Now.png",
+    technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "RESTful API"],
+    githubLink: "https://github.com/Dipesh600/Wandi-Now",
     demoLink: "",
-    date: "Dec 2024"
+    date: "April 2024"
+  },
+  {
+    id: 3,
+    title: "App Limiter",
+    description: "An Android application designed to help users manage their screen time effectively. Built using Kotlin in Android Studio, the app provides a simple and intuitive interface for users to monitor and control their app usage. Features include displaying selected apps, remaining time, and total time limits, with notifications when limits are reached to encourage better app usage habits.",
+    shortDescription: "Android app for screen time management",
+    image: "/assets/projects/App_Limitter.png",
+    technologies: ["Kotlin", "Android Studio", "XML", "SQLite"],
+    githubLink: "https://github.com/Dipesh600/App-Limiter",
+    demoLink: "",
+    date: "January 2024"
   }
 ]; 

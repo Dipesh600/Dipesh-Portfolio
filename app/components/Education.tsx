@@ -7,24 +7,24 @@ import { motion } from "framer-motion";
 const educationData = [
   {
     school: "Lovely Professional University Punjab",
-    degree: "Computer Science and Engineering",
+    degree: "B.Tech in Computer Science and Engineering",
     location: "Jalandhar, Punjab",
     period: "2022 – 2026",
-    grade: "CGPA: 6.35"
+    grade: "CGPA: 6.82"
   },
   {
-    school: "Sanjay Gandhi Inter College",
+    school: "Premier Higher Secondary School",
     degree: "12th with Science",
-    location: "Saran, Bihar",
-    period: "2020 – 2021",
-    grade: "Percentage: 73.3%"
+    location: "Kathmandu, Nepal",
+    period: "2019 – 2021",
+    grade: "Percentage: 82.5%"
   },
   {
-    school: "G.D Mission Public School",
+    school: "Peace Zone English Boarding School",
     degree: "10th with Science",
-    location: "Muzaffarpur, Bihar",
-    period: "2017 – 2018",
-    grade: "Percentage: 60%"
+    location: "Nawalpur, Sarlahi, Nepal",
+    period: "2018 – 2019",
+    grade: "Percentage: 87.5%"
   }
 ];
 

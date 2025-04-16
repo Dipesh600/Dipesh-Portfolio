@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <a href="#home" className="text-2xl font-bold bg-gradient-text">
-              Happy Swaraj
+              Dipesh Chaudhary
             </a>
             <p className="text-primary-300 mt-2 max-w-md">
               Computer Science & Engineering student passionate about creating web applications 
@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-4 mb-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Dipesh600"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-300 hover:text-blue-500 transition-colors"
@@ -29,7 +29,7 @@ const Footer = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/dipesh--chaudhary/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-300 hover:text-blue-500 transition-colors"
@@ -38,7 +38,7 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/DipeshCh040313"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-300 hover:text-blue-500 transition-colors"
@@ -47,7 +47,7 @@ const Footer = () => {
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="mailto:happyswaraj@example.com"
+                href="mailto:dipeshch040313@gmail.com"
                 className="text-primary-300 hover:text-blue-500 transition-colors"
                 aria-label="Email"
               >
@@ -55,7 +55,7 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-primary-400 text-sm">
-              © {currentYear} Happy Swaraj. All rights reserved.
+              © {currentYear} Dipesh Chaudhary. All rights reserved.
             </p>
           </div>
         </div>

@@ -34,7 +34,7 @@ export default function ProjectDetails() {
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="relative h-96 rounded-xl overflow-hidden">
+          <div className="relative h-[400px] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900">
             <img
               src={project.image}
               alt={project.title}

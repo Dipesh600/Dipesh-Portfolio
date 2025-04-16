@@ -30,7 +30,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-blue-500 text-lg md:text-xl mb-3">Hello, I'm</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-text">
-            Happy Swaraj
+            Dipesh Chaudhary
           </h1>
           <h2 className="text-xl md:text-2xl font-medium text-primary-600 dark:text-primary-300 mb-8">
             Computer Science & Engineering Student
@@ -49,7 +49,7 @@ const Hero = () => {
               Get in Touch
             </Button>
             <a 
-              href="/assets/Happy_Swaraj_Resume.pdf" 
+              href="/assets/Dipesh_Specialized.pdf" 
               download
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white dark:bg-gray-800 text-primary-800 dark:text-primary-100 hover:bg-gray-100 dark:hover:bg-gray-700 h-11 px-8"
             >
@@ -59,7 +59,7 @@ const Hero = () => {
           </div>
           <div className="mt-12 flex justify-center space-x-6">
             <a
-              href="https://github.com"
+              href="https://github.com/Dipesh600"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-600 dark:text-primary-300 hover:text-blue-500 dark:hover:text-blue-500 transition-colors"
@@ -68,7 +68,7 @@ const Hero = () => {
               <Github className="h-6 w-6" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/dipesh--chaudhary/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-600 dark:text-primary-300 hover:text-blue-500 dark:hover:text-blue-500 transition-colors"
@@ -77,7 +77,7 @@ const Hero = () => {
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://twitter.com/DipeshCh040313"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-600 dark:text-primary-300 hover:text-blue-500 dark:hover:text-blue-500 transition-colors"
@@ -86,7 +86,7 @@ const Hero = () => {
               <Twitter className="h-6 w-6" />
             </a>
             <a
-              href="mailto:happyswaraj@example.com"
+              href="mailto:dipeshch040313@gmail.com"
               className="text-primary-600 dark:text-primary-300 hover:text-blue-500 dark:hover:text-blue-500 transition-colors"
               aria-label="Email"
             >
