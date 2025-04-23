@@ -26,15 +26,6 @@ const Experience = () => {
       icon: <Code className="h-6 w-6" />,
     },
     {
-      title: "Technical Community Lead",
-      organization: "LPU Coding Club",
-      period: "2023 - Present",
-      description:
-        "Lead a community of 100+ student developers, organizing workshops and coding competitions. Mentored junior developers in web development best practices and modern technologies. Facilitated peer learning sessions and hackathon preparations, resulting in increased student participation in tech events.",
-      skills: ["Leadership", "Mentoring", "Event Management", "Public Speaking"],
-      icon: <Users className="h-6 w-6" />,
-    },
-    {
       title: "CodeChef Ranking",
       organization: "CodeChef",
       period: "Nov 2022",
